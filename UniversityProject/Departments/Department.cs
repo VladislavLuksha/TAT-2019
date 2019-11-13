@@ -4,15 +4,17 @@ using System.Xml;
 
 namespace University
 {
+    [Serializable]
     public class Department
     {
-        Address address;
-        string name;
+        public Address Address { get; set; }
+        public string Name { get; set; }
 
+        public Department() { }
         public Department(Address adress,string name)
         {
-            this.address = adress;
-            this.name = name;
+            this.Address = adress;
+            this.Name = name;
         }
 
         public override bool Equals(object subject)
@@ -20,7 +22,7 @@ namespace University
             if(subject is Department)
             {
                 Department department = (Department)subject;
-                return (this.name == department.name && address.Equals(department.address));
+                return (this.Name == department.Name && Address.Equals(department.Address));
             }
             else
             {
@@ -29,7 +31,7 @@ namespace University
         }
         public override string ToString()
         {
-            return this.name + " " + this.address.ToString(); 
+            return this.Name + " " + this.Address.ToString(); 
         }
     }
 }

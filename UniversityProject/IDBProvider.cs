@@ -8,11 +8,10 @@ namespace University
 {
     interface IDBProvider
     {
-        List<Student> GetStudents();
-        List<Faculty> GetFaculties();
-        List<Address> GetAddresses();
-        List<University> GetUniversities();
-        List<int> IDfaculty();
-        List<int> IDStudent();
+        List<DBOStudent> GetStudents();
+        List<DBOFaculty> GetFaculties();
+        List<DBOAddress> GetAddresses();
+        List<DBOUniversity> GetUniversities();
+        List<DBODean> GetDean();
     }
 }

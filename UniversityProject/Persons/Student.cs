@@ -1,21 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace University
 {
-    class Student:Person
+    [Serializable]
+    class Student:Person, IComparable
     {
-        List<int> assessments;
+        public double AverageMark { get; set; }
 
-        public Student(string name,string surname):base(name,surname)
+        public Student(string name,string surname,double averageMark):base(name,surname)
         {
-          
+            this.AverageMark = averageMark;
         }
         public Student() { }
+
         public override string ToString()
         {
-            return base.ToString() + " " + assessments.ToString();
+            return base.ToString() + " " + AverageMark.ToString();
         }
 
+        public int CompareTo(object obj)
+        {
+            Student student = obj as Student;
+            if (student != null)
+            {
+                return this.AverageMark.CompareTo(student.AverageMark);
+            }
+            else
+            {
+                throw new Exception("Error!!!");
+            }
+                
+        }
     }
 }

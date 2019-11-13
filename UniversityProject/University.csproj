@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,8 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseProviderXml.cs" />
-    <Compile Include="GlobalManager.cs" />
+    <Compile Include="FileReader\DataBaseProviderJson.cs" />
+    <Compile Include="FileReader\DataBaseProviderXml.cs" />
+    <Compile Include="SortObject\StudentComparer.cs" />
+    <Compile Include="DboObject\DBOAddress.cs" />
+    <Compile Include="DboObject\DBODean.cs" />
+    <Compile Include="DboObject\DBOFaculty.cs" />
+    <Compile Include="DboObject\DBOStudent.cs" />
+    <Compile Include="DboObject\DBOUniversity.cs" />
+    <Compile Include="GlobalCreator.cs" />
     <Compile Include="IDBProvider.cs" />
     <Compile Include="Persons\Car.cs" />
     <Compile Include="Persons\Garage.cs" />
@@ -64,12 +75,18 @@
     <Compile Include="Departments\Service.cs" />
     <Compile Include="Persons\Student.cs" />
     <Compile Include="University.cs" />
+    <Compile Include="UniversityCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="file.json" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="University.xml" />
+    <Content Include="FilesJson\json.txt" />
+    <Content Include="FilesJson\students.txt" />
+    <Content Include="FilesXml\University.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

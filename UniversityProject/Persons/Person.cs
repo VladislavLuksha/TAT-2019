@@ -3,15 +3,16 @@ using System.Collections.Generic;
 
 namespace University
 {
+    [Serializable]
     class Person
     {
-        string name;
-        string surname;
+        public string Name { get; set; }
+        public string Surname { get; set; }
 
         public Person(string name,string surname)
         {
-            this.name = name;
-            this.surname = surname;
+            this.Name = name;
+            this.Surname = surname;
         }
         public Person() { }
         public override bool Equals(object subject)
@@ -19,7 +20,7 @@ namespace University
             if (subject is Person)
             {
                 Person student = (Person)subject;
-                return (this.name == student.name && this.surname == student.surname);
+                return (this.Name == student.Name && this.Surname == student.Surname);
             }
             else
             {
@@ -29,7 +30,7 @@ namespace University
 
         public override string ToString()
         {
-            return this.name + " " + " " + this.surname;
+            return this.Name + " " + " " + this.Surname;
         }
     }
 }

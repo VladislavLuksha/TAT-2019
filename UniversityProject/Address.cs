@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace University
 {
+    [Serializable]
     public class Address
     {
-        string street;
-        string city;
-        string building;
+        public string Street { get; set; }
+        string City { get; set; }
+        string Building { get; set; }
 
         public Address() { }
         public Address(string street,string city,string building)
         {
-            this.street = street;
-            this.city = city;
-            this.building = building;
+            this.Street = street;
+            this.City = city;
+            this.Building = building;
         }
 
         public override bool Equals(object subject)
@@ -25,7 +26,7 @@ namespace University
             if (subject is Address)
             {
                 Address addres = (Address)subject;
-                return (this.street == addres.street && this.city == addres.city && this.building == addres.building);
+                return (this.Street == addres.Street && this.City == addres.City && this.Building == addres.Building);
             }
             else
             {
@@ -34,7 +35,7 @@ namespace University
         }
         public override string ToString()
         {
-            return this.street + " " + this.city + " " + this.building;
+            return this.Street + " " + this.City + " " + this.Building;
         }
     }
 }

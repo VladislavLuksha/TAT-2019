@@ -4,28 +4,30 @@ using System.Xml;
 
 namespace University
 {
+    [Serializable]
     class Faculty:Department
     {
-        List <Student> students;
-        Dean dean;
+        public List<Student> Students { get; set; }
+        public Dean Dean { get; set; }
         int numberOfStudents = 10;
 
+        public Faculty() : base() { }
         public Faculty(Address address, string name,Dean dean):base(address,name)
         {
-            this.dean = dean;
-            students = new List<Student>();
+            this.Dean = dean;
+            Students = new List<Student>();
         }
 
         public bool AddStudent(Student student)
         {
             bool check = true;
-            if (numberOfStudents <= students.Count)
+            if (numberOfStudents <= Students.Count)
             {
                 return false;
             }
             else
             {
-                foreach (Student element in students)
+                foreach (Student element in Students)
                 {
                     if (element?.Equals(student) == true)
                     {
@@ -35,7 +37,7 @@ namespace University
                 }
                 if (check == true)
                 {
-                    students.Add(student);
+                    Students.Add(student);
                     return true;
                 }
                 else
@@ -47,42 +49,7 @@ namespace University
 
         public override string ToString()
         {
-            return base.ToString() + " " + this.dean.ToString() + " " + students.ToString();
-        }
-        
-        public void AddStudentsFromXml(string fileName)
-        {
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(fileName);
-            XmlElement xRoot = xDoc.DocumentElement;
-            Student student;
-            foreach (XmlElement xnode in xRoot)
-            {
-                if (xnode.Name == "students")
-                {
-                    foreach (XmlNode childNode in xnode.ChildNodes)
-                    {
-                        string name = "";
-                        string surname = "";
-                        foreach (XmlNode xmlNode in childNode.ChildNodes)
-                        {
-                            if (xmlNode.Name == "name")
-                            {
-                                name = xmlNode.InnerText;
-                            }
-                            if (xmlNode.Name == "surname")
-                            {
-                                surname = xmlNode.InnerText;
-                            }
-                            if (name != "" && surname != "")
-                            {
-                                student = new Student(name, surname);
-                                AddStudent(student);
-                            }
-                        }
-                    }
-                }
-            }
+            return base.ToString() + " " + this.Dean.ToString() + " " + Students.ToString();
         }
     }
 }
