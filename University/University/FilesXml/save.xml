@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <dBOUniversities>
+    <DBOUniversity>
+      <Name>BGU</Name>
+      <AddressId>0</AddressId>
+      <UniversityId>0</UniversityId>
+    </DBOUniversity>
+    <DBOUniversity>
+      <Name>BNTY</Name>
+      <AddressId>1</AddressId>
+      <UniversityId>1</UniversityId>
+    </DBOUniversity>
+  </dBOUniversities>
+  <dBOFaculties>
+    <DBOFaculty>
+      <Name> Physics </Name>
+      <FacultyID>0</FacultyID>
+      <AdressID>2</AdressID>
+      <UniversityID>0</UniversityID>
+    </DBOFaculty>
+    <DBOFaculty>
+      <Name> Mathematics </Name>
+      <FacultyID>1</FacultyID>
+      <AdressID>3</AdressID>
+      <UniversityID>0</UniversityID>
+    </DBOFaculty>
+    <DBOFaculty>
+      <Name> Biology </Name>
+      <FacultyID>2</FacultyID>
+      <AdressID>4</AdressID>
+      <UniversityID>1</UniversityID>
+    </DBOFaculty>
+  </dBOFaculties>
+  <dBOAddresses>
+    <DBOAddress>
+      <AddressId>0</AddressId>
+      <Street> Lenina </Street>
+      <City> Minsk </City>
+      <Building> 15 </Building>
+    </DBOAddress>
+    <DBOAddress>
+      <AddressId>1</AddressId>
+      <Street> Lenina </Street>
+      <City> Minsk </City>
+      <Building> 32 </Building>
+    </DBOAddress>
+    <DBOAddress>
+      <AddressId>2</AddressId>
+      <Street> October </Street>
+      <City> Minsk </City>
+      <Building> 14 </Building>
+    </DBOAddress>
+    <DBOAddress>
+      <AddressId>3</AddressId>
+      <Street> Kolos </Street>
+      <City> Minsk </City>
+      <Building> 16 </Building>
+    </DBOAddress>
+    <DBOAddress>
+      <AddressId>4</AddressId>
+      <Street> Kolos </Street>
+      <City> Minsk </City>
+      <Building> 10 </Building>
+    </DBOAddress>
+  </dBOAddresses>
+  <dBODeans>
+    <DBODean>
+      <Name>Anton</Name>
+      <Surname> Smolov </Surname>
+      <DeanId>0</DeanId>
+    </DBODean>
+    <DBODean>
+      <Name>Vladislav</Name>
+      <Surname> Ivanov </Surname>
+      <DeanId>1</DeanId>
+    </DBODean>
+    <DBODean>
+      <Name>Dima</Name>
+      <Surname> Petrow </Surname>
+      <DeanId>2</DeanId>
+    </DBODean>
+  </dBODeans>
+  <dBOStudents>
+    <DBOStudent>
+      <Name> Ivan </Name>
+      <Surname> Ivanov </Surname>
+      <FacultyID>0</FacultyID>
+      <AverageMark>5.5</AverageMark>
+    </DBOStudent>
+    <DBOStudent>
+      <Name> Kostya </Name>
+      <Surname> Kvanov </Surname>
+      <FacultyID>0</FacultyID>
+      <AverageMark>6.5</AverageMark>
+    </DBOStudent>
+    <DBOStudent>
+      <Name>Lena</Name>
+      <Surname>Ivanova</Surname>
+      <FacultyID>0</FacultyID>
+      <AverageMark>6.5</AverageMark>
+    </DBOStudent>
+    <DBOStudent>
+      <Name> Dima </Name>
+      <Surname> Lvanov </Surname>
+      <FacultyID>1</FacultyID>
+      <AverageMark>7.5</AverageMark>
+    </DBOStudent>
+    <DBOStudent>
+      <Name> Dima </Name>
+      <Surname> Svanov </Surname>
+      <FacultyID>1</FacultyID>
+      <AverageMark>5.5</AverageMark>
+    </DBOStudent>
+    <DBOStudent>
+      <Name>Lena</Name>
+      <Surname>Ivanova</Surname>
+      <FacultyID>1</FacultyID>
+      <AverageMark>6.5</AverageMark>
+    </DBOStudent>
+    <DBOStudent>
+      <Name> Pavel </Name>
+      <Surname> Babich </Surname>
+      <FacultyID>2</FacultyID>
+      <AverageMark>7.5</AverageMark>
+    </DBOStudent>
+  </dBOStudents>
+</root>

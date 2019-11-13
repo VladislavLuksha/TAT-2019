@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C101A359-C0FE-4DF6-A5A9-62FAC0E515C0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>University</RootNamespace>
+    <AssemblyName>University</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileReaders\DBProviderXml.cs" />
+    <Compile Include="FileReaders\DataBaseProviderJson.cs" />
+    <Compile Include="InterfacesProvider\IDBProviderJson.cs" />
+    <Compile Include="DboObjects\ListDBOObject.cs" />
+    <Compile Include="OldCode\DataBaseProviderXml.cs" />
+    <Compile Include="InterfacesProvider\IDBOProvider.cs" />
+    <Compile Include="SortObject\StudentComparer.cs" />
+    <Compile Include="DboObjects\DBOAddress.cs" />
+    <Compile Include="DboObjects\DBODean.cs" />
+    <Compile Include="DboObjects\DBOFaculty.cs" />
+    <Compile Include="DboObjects\DBOStudent.cs" />
+    <Compile Include="DboObjects\DBOUniversity.cs" />
+    <Compile Include="OldCode\GlobalCreator.cs" />
+    <Compile Include="OldCode\IDBProvider.cs" />
+    <Compile Include="Persons\Car.cs" />
+    <Compile Include="Persons\Garage.cs" />
+    <Compile Include="Persons\Accountant.cs" />
+    <Compile Include="Objects\Address.cs" />
+    <Compile Include="Departments\Autopark.cs" />
+    <Compile Include="Persons\Employee.cs" />
+    <Compile Include="Persons\Dean.cs" />
+    <Compile Include="Departments\Faculty.cs" />
+    <Compile Include="Persons\Head.cs" />
+    <Compile Include="Departments\Institute.cs" />
+    <Compile Include="Departments\Department.cs" />
+    <Compile Include="Persons\Manager.cs" />
+    <Compile Include="Persons\Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Departments\Service.cs" />
+    <Compile Include="Persons\Student.cs" />
+    <Compile Include="UniversitiesCreator.cs" />
+    <Compile Include="Objects\University.cs" />
+    <Compile Include="OldCode\UniversityCreator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FilesJson\json.txt" />
+    <Content Include="FilesXml\save.xml" />
+    <None Include="FilesJson\file.json" />
+    <Content Include="FilesXml\University.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions />
+</Project>
