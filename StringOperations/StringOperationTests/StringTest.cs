@@ -18,6 +18,8 @@ namespace StringOperationTests
             Assert.AreEqual(0, strings.SearchForIdenticalCharacters(""));
         }
         [TestMethod]
+        public void 
+        [TestMethod]
         public void TestSearchForUnequalCharacters()
         {
             StringAnalyzer strings = new StringAnalyzer();
