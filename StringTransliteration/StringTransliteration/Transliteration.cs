@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace StringTransliteration
 {
-    /*
-     Transliteration class.
-     This class translates a string.
-     */
+    ///<summary>
+    ///Transliteration class. This class translates a string.
+    ///</summary>
     public class Transliteration
     {
         Dictionary<char, string> russianDictionary = new Dictionary<char, string>
@@ -28,13 +28,19 @@ namespace StringTransliteration
             {"YO",'Ё'},{"ZH",'Ж'},{"KH",'Х' },{"TS",'Ц' },{"CH",'Ч' },{"SH",'Ш' },{ "SCH",'Щ'},{ "YU",'Ю'},{ "YA",'Я'}
         };
 
-        /*
-         This method translates a input string characters from Russian to English.
-         myString is input string.
-         */ 
+        /// <summary>
+        /// This method translates a input string characters from Russian to English. 
+        /// </summary>
+        /// <param name ="myName"> translation string </param>
+        /// <returns> translated string </returns>
+        /// <exception cref="Exception"> Character is not letter! </exception>
         public string TranslationFromRussianIntoEnglish(string myString)
         {
             string resultString = null;
+            if(myString==string.Empty)
+            {
+                return resultString;
+            }
             myString = myString.ToUpper();
             CheckStringForSymbols(myString);
             foreach(char element in myString)
@@ -46,14 +52,19 @@ namespace StringTransliteration
             }
             return resultString;
         }
-
-        /*
-         This method translates a input string characters from English to Russian.
-         myString is input string.
-         */
+        /// <summary>
+        /// This method translates a input string characters from English to Russian. 
+        /// </summary>
+        /// <param name="myString"></param>
+        /// <returns> translated string </returns>
+        /// <exception cref="Exception"> Character is not letter! </exception>
         public string TransliteEnglishString(string myString)
         {
             string resultString = null;
+            if (String.IsNullOrEmpty(myString))
+            {
+                return resultString;
+            }
             myString = myString.ToUpper();
             CheckStringForSymbols(myString);
             for (int i = 0; i < myString.Length; i++)
@@ -77,11 +88,11 @@ namespace StringTransliteration
         }
         private void CheckStringForSymbols(string myString)
         {
-            foreach(char element in myString)
+            foreach (char element in myString)
             {
-                if(element >= 33 && element <= 64 || element >= 91 && element <= 96 || element >= 123 && element <= 127)
+                if (element >= 33 && element <= 64 || element >= 91 && element <= 96 || element >= 123 && element <= 127)
                 {
-                    throw new Exception("Character is not letter!");
+                    throw new InvalidFormatStringException("Character is not letter!");
                 }
             }
         }
