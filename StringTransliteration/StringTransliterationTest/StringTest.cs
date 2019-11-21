@@ -53,11 +53,6 @@ namespace StringTransliterationTest
             Assert.AreEqual("ЧАР", transliteration.TransliteEnglishString("char"));
         }
         [TestMethod]
-        public void TestMethodTranslationFromEnglishToRussianToUniqueCase_TS()
-        {
-            Assert.AreEqual("ЦЫГАН", transliteration.TransliteEnglishString("tsygan"));
-        }
-        [TestMethod]
         public void TestMethodTranslationFromEnglishToRussianToUniqueCase_KH()
         {
             Assert.AreEqual("ХВОЯ", transliteration.TransliteEnglishString("khvoya"));
@@ -75,43 +70,22 @@ namespace StringTransliterationTest
         [TestMethod]
         public void TestMethodTranslationFromEnglishToRussianToException_SymbolIsSigns()
         {
-            try
-            {
-                transliteration.TransliteEnglishString("doska9{/.@<");
-            }
-            catch
-            {
-                Assert.IsTrue(true);
-            }
+            Assert.ThrowsException<InvalidFormatStringException>(() => transliteration.TranslationFromRussianIntoEnglish("1d4.eda"));
         }
         [TestMethod]
         public void TestMethodTranslationFromRussianToEnglishToException_SymbolIsSigns()
         {
-            try
-            {
-                transliteration.TranslationFromRussianIntoEnglish("!~н{ос1");
-            }
-            catch
-            {
-                Assert.IsTrue(true);
-            }
+            Assert.ThrowsException<InvalidFormatStringException>(() => transliteration.TranslationFromRussianIntoEnglish("16{мама~"));
         }
         [TestMethod]
         public void TestMethodTranslationFromRussianToEnglishToStringEmpty()
         {
-            Assert.AreEqual("", transliteration.TransliteEnglishString(""));
+            Assert.AreEqual(null, transliteration.TransliteEnglishString(null));
         }
         [TestMethod]
         public void TestMethodTranslationFromRussianToEnglishToDifferentLetters()
         {
-            try
-            {
-                transliteration.TranslationFromRussianIntoEnglish("мамаPAPA");
-            }
-            catch
-            {
-                Assert.IsTrue(true);
-            }
+            Assert.ThrowsException<InvalidFormatStringException>(() => transliteration.TranslationFromRussianIntoEnglish("mamaпапа"));
         }
     }
 }
