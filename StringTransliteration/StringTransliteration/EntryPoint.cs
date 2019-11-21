@@ -13,7 +13,7 @@ namespace StringTransliteration
                 Console.WriteLine(transliteration.TranslationFromRussianIntoEnglish(myString));
                 Console.WriteLine(transliteration.TransliteEnglishString(transliteration.TranslationFromRussianIntoEnglish(myString)));
             }
-            catch (Exception exception)
+            catch (InvalidFormatStringException exception)
             {
                 Console.WriteLine(exception.Message);
             }
