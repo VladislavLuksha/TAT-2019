@@ -7,36 +7,39 @@ namespace StringOperationTests
     [TestClass]
     public class StringsTest
     {
+        StringAnalyzer stringAnalyzer = new StringAnalyzer();
+
         [TestMethod]
-        public void TestSearchForIdenticalCharacters()
+
+        [DataRow(0, "")]
+        [DataRow(0, "djkilasd;")]
+        [DataRow(5, "1225588888765")]
+        [DataRow(4, "фффллллщщщели")]
+        [DataRow(3, "AAAaakke")]
+        public void TestSearchForIdenticalCharacters(int expected, string temporaryString)
         {
-            StringAnalyzer strings = new StringAnalyzer();
-            Assert.AreEqual(3, strings.SearchForIdenticalCharacters("AAAaakke"));
-            Assert.AreEqual(4, strings.SearchForIdenticalCharacters("фффллллщщщели"));
-            Assert.AreEqual(5, strings.SearchForIdenticalCharacters("1225588888765"));
-            Assert.AreEqual(0, strings.SearchForIdenticalCharacters("djkilasd;"));
-            Assert.AreEqual(0, strings.SearchForIdenticalCharacters(""));
+            Assert.AreEqual(expected, stringAnalyzer.SearchForIdenticalCharacters(temporaryString));
         }
+
         [TestMethod]
-        public void 
-        [TestMethod]
-        public void TestSearchForUnequalCharacters()
+        [DataRow(5, "12234577")]
+        [DataRow(5, "aAAagrtt")]
+        [DataRow(0, "")]
+        [DataRow(0, "aaaaaaa")]
+        public void TestSearchForUnequalCharacters(int expected, string temporaryString)
         {
-            StringAnalyzer strings = new StringAnalyzer();
-            Assert.AreEqual(5, strings.SearchForUnequalCharacters("12234577"));
-            Assert.AreEqual(5, strings.SearchForUnequalCharacters("aAAagrtt"));
-            Assert.AreEqual(0, strings.SearchForUnequalCharacters(""));
-            Assert.AreEqual(0, strings.SearchForUnequalCharacters("aaaaaaa"));
+            Assert.AreEqual(expected, stringAnalyzer.SearchForUnequalCharacters(temporaryString));
         }
+
         [TestMethod]
-        public void TestSearchIdenticalLatinCharacters()
+        [DataRow(0, "")]
+        [DataRow(0, "1234567")]
+        [DataRow(3, "dgglll5555345")]
+        [DataRow(0, "kjdlqldcl")]
+        [DataRow(4, "AlllDDDD5]]]]")]
+        public void TestSearchIdenticalLatinCharacters(int expected,string temporaryString)
         {
-            StringAnalyzer strings = new StringAnalyzer();
-            Assert.AreEqual(0, strings.SearchIdenticalLatinCharacters(""));
-            Assert.AreEqual(0, strings.SearchIdenticalLatinCharacters("1233343"));
-            Assert.AreEqual(3, strings.SearchIdenticalLatinCharacters("dgglll5555345"));
-            Assert.AreEqual(0, strings.SearchIdenticalLatinCharacters("afdtfuthr"));
-            Assert.AreEqual(4, strings.SearchIdenticalLatinCharacters("AlllDDDD5]]]]"));
+            Assert.AreEqual(expected, stringAnalyzer.SearchIdenticalLatinCharacters(temporaryString));
         }
     }
 }
