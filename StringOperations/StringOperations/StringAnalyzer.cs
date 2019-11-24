@@ -2,8 +2,16 @@
 
 namespace StringOperations
 {
+    /// <summary>
+    /// This class for string analysis.
+    /// </summary>
     public class StringAnalyzer
     {
+        /// <summary>
+        /// This method searches for unequal characters.
+        /// </summary>
+        /// <param name="myString"> search string characters </param>
+        /// <returns>maximum amount unequal characters </returns>
         public int SearchForUnequalCharacters(string myString)
         {
             int maxAmount = 1, amountOfElements = 1;

@@ -5,7 +5,7 @@ namespace StringOperations
     class EntryPoint
     {
         static void Main(string[] args)
-        {
+        {            
             string myString = Console.ReadLine();
             StringAnalyzer strings = new StringAnalyzer();
             Console.WriteLine("Maximum consecutive identical characters: " + strings.SearchForIdenticalCharacters(myString));
