@@ -10,7 +10,6 @@ namespace StringOperationTests
         StringAnalyzer stringAnalyzer = new StringAnalyzer();
 
         [TestMethod]
-
         [DataRow(0, "")]
         [DataRow(0, "djkilasd;")]
         [DataRow(5, "1225588888765")]
