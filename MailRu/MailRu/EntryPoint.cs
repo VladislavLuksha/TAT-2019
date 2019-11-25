@@ -1,7 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.IE;
 
 namespace MailRu
 {
@@ -18,11 +17,13 @@ namespace MailRu
                 MailRu mailRu = new MailRu(webDriver);
                 mailRu.LoginAs("vladivanoval@mail.ru", "zxcvbnm,./12345asdfghjkl;'");
                 Console.WriteLine($"Number of messages= { mailRu.GetUnreadMessages()}");
+                mailRu.ReadUnreadMessages();
+                Console.WriteLine($"Number of messages= { mailRu.GetUnreadMessages()}");
                 webDriver.Quit();
             }
-            catch(Exception exception)
+            catch(Exception exeption)
             {
-                Console.WriteLine(exception.Message);
+                Console.WriteLine(exeption.Message); 
             }
         }
     }
