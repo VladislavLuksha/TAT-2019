@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoShow.cs" />
     <Compile Include="Commands\AveragePrice.cs" />
     <Compile Include="Commands\AveragePriceType.cs" />
     <Compile Include="Car.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Command.cs" />
     <Compile Include="Commands\Exit.cs" />
     <Compile Include="Invoker.cs" />
+    <Compile Include="NoSuchAnElementException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

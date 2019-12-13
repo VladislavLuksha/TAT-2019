@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace dev_6
 {
     /// <summary>
@@ -7,13 +6,22 @@ namespace dev_6
     /// </summary>
     class Invoker
     {
+        /// <summary>
+        /// This is an object of an abstract class of command 
+        /// </summary>
         public  Command Command { get; set; }
 
-        public int  RunCommands()
+        /// <summary>
+        /// This method calls a command to execute a request 
+        /// </summary>
+        public void  RunCommands()
         {
-            return (Command.Excecute());
+            Command.Excecute();
         }
 
+        /// <summary>
+        /// This method calls a command to execute a request
+        /// </summary>
         public void UndoCommands()
         {
             Command.Undo();

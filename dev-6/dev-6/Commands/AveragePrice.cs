@@ -5,16 +5,26 @@ namespace dev_6
 {
     class AveragePrice:Command
     {
-        public AveragePrice(Car car) : base(car) { }
+        /// <summary>
+        /// This is constructor class
+        /// </summary>
+        /// <param name="autoShow"></param>
+        public AveragePrice(AutoShow autoShow) : base(autoShow) { }
 
-        public override int Excecute()
+        /// <summary>
+        /// This method prints the result of the method average price
+        /// </summary>
+        public override void Excecute()
         {
-            return Car.AveragePrice();
+           PrintResult(AutoShow.AveragePrice());
         }
 
+        /// <summary>
+        /// This methods cancels of the method average price
+        /// </summary>
         public override void Undo()
         {
-            Car.AveragePrice();
+            AutoShow.AveragePrice();
         }
     }
 }

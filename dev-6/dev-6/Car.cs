@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace dev_6
 {
     /// <summary>
@@ -7,10 +6,22 @@ namespace dev_6
     /// </summary>
     public class Car
     {
-        public string Marka { get; set; }
+        /// <summary>
+        /// This is the marka of car
+        /// </summary>
+        public string Mark { get; set; }
+        /// <summary>
+        /// This is the model of car
+        /// </summary>
         public string Model { get; set; }
-        public int NumberOfCars { get; set; }
-        public int CostOneModel { get; set; }
+        /// <summary>
+        /// This is the number of car
+        /// </summary>
+        public double NumberOfCars { get; set; }
+        /// <summary>
+        /// This is the cost of one model
+        /// </summary>
+        public double CostOneModel { get; set; }
 
         /// <summary>
         /// This is constructor class.
@@ -19,35 +30,12 @@ namespace dev_6
         /// <param name="model"></param>
         /// <param name="numberOfCars"></param>
         /// <param name="costOneModel"></param>
-        public Car(string marka,string model,int numberOfCars,int costOneModel)
+        public Car(string mark,string model,int numberOfCars,int costOneModel)
         {
-            Marka = marka;
+            Mark = mark;
             Model = model;
             NumberOfCars = numberOfCars;
             CostOneModel = costOneModel;
-        }
-    
-        public int CountTypes()
-        {
-            return 1;
-        }
-
-        public int CountAll()
-        {
-            return 1;
-        }
-        public int AveragePrice()
-        {
-            return 1;
-        }
-        public int AveragePriceType()
-        {
-            return 1;
-        }
-         
-        public void Exit()
-        {
-            Environment.FailFast("exit");
         }
     }
 }

@@ -1,19 +1,26 @@
-﻿using System;
-
+﻿
 namespace dev_6
 {
+    /// <summary>
+    /// This class creates a new command such as count types
+    /// </summary>
     class CountTypes : Command
     {
-        public CountTypes(Car car) : base(car) { }
+        /// <summary>
+        /// This is constructor class
+        /// </summary>
+        /// <param name="autoShow"></param>
+        public CountTypes(AutoShow autoShow) : base(autoShow) { }
       
-        public override int  Excecute()
+     
+        public  override void  Excecute()
         {
-            return Car.CountTypes();
+            PrintResult(AutoShow.CountTypes());
         }
 
         public override void Undo()
         {
-            Car.CountTypes();
+            AutoShow.CountTypes();
         }
     }
 }

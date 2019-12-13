@@ -1,19 +1,27 @@
-﻿using System;
-
+﻿
 namespace dev_6
 {
+    /// <summary>
+    /// This class creates a new command such as exit from programm
+    /// </summary>
     class Exit:Command
     {
-        public Exit(Car car) : base(car) { }
+        /// <summary>
+        /// Thsi is constructor class
+        /// </summary>
+        /// <param name="autoShow"></param>
+        public Exit(AutoShow autoShow) : base(autoShow) { }
 
-        public override int Excecute()
+        /// <summary>
+        /// This method excecutes of the method exit
+        /// </summary>
+        public override void Excecute()
         {
-            return 0;
+            AutoShow.Exit();
         }
 
         public override void Undo()
         {
-            Car.Exit();
         }
     }
 }

@@ -1,19 +1,28 @@
-﻿using System;
-
+﻿
 namespace dev_6
 {
     class CountAll : Command
     {
-        public CountAll(Car car) : base(car) { }
+        /// <summary>
+        /// This is constructor class
+        /// </summary>
+        /// <param name="autoShow"></param>
+        public CountAll(AutoShow autoShow) : base(autoShow) { }
 
-        public override int Excecute()
+        /// <summary>
+        /// This is method prints the result of the method count all
+        /// </summary>
+        public override void Excecute()
         {
-            return Car.CountAll();
+           PrintResult(AutoShow.CountAll());
         }
 
+        /// <summary>
+        /// This method cancels of the method count all
+        /// </summary>
         public override void Undo()
         {
-            Car.CountAll();
+            AutoShow.CountAll();
         }
     }
 }
