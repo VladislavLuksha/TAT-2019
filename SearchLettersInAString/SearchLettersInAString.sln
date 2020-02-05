@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchLettersInAString", "SearchLettersInAString\SearchLettersInAString.csproj", "{C8B932D7-15EF-4B54-8C72-C7FCE2607DCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchLettersInAString", "SearchLettersInAString.csproj", "{C8B932D7-15EF-4B54-8C72-C7FCE2607DCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A6C5F7F5-9F59-4264-959B-0788DFAAC1D4}
+		SolutionGuid = {3A0FB8D5-C4BF-4BBF-B04D-6074DBCCA0A4}
 	EndGlobalSection
 EndGlobal
