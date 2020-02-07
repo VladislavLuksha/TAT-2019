@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StringOperations;
 
 namespace StringOperationTests
@@ -35,10 +34,11 @@ namespace StringOperationTests
         [DataRow(0, "1234567")]
         [DataRow(3, "dgglll5555345")]
         [DataRow(0, "kjdlqldcl")]
-        [DataRow(4, "AlllDDDD5]]]]")]
+        [DataRow(5, "AlllDDDDD5]]]]")]
+        [DataRow(0, "////\\\\44")]
         public void TestSearchIdenticalLatinCharacters(int expected,string temporaryString)
         {
-            Assert.AreEqual(expected, stringAnalyzer.SearchIdenticalLatinCharacters(temporaryString));
+            Assert.AreEqual(expected, stringAnalyzer.SearchForIdenticalLatinCharacters(temporaryString));
         }
     }
 }

@@ -8,16 +8,17 @@ namespace StringOperations
     public class StringAnalyzer
     {
         /// <summary>
-        /// This method searches for unequal characters.
+        /// This method counts maximum number of different characters
         /// </summary>
-        /// <param name="myString"> search string characters </param>
-        /// <returns>maximum amount unequal characters </returns>
-        public int SearchForUnequalCharacters(string myString)
+        /// <param name="myString"></param>
+        /// <param name="func"></param>
+        /// <returns>maxAmount</returns>
+        private int CountMaxNumberOfCharacters(string myString,Func<string,int,bool> func)
         {
             int maxAmount = 1, amountOfElements = 1;
             for (int i = 1; i < myString.Length; i++)
             {
-                if (myString[i] != myString[i - 1])
+                if (func(myString,i))
                 {
                     amountOfElements++;
                 }
@@ -30,63 +31,39 @@ namespace StringOperations
                     maxAmount = amountOfElements;
                 }
             }
-            if(maxAmount == 1 || myString == null)
-            {
-                maxAmount = 0;
-            }
-            return maxAmount;
-        }
-        public int SearchForIdenticalCharacters(string myString)
-        {
-            int maxAmount = 1, AmountOfElements = 1;
-            for (int i = 1; i < myString.Length; i++)
-            {
-                if (myString[i] == myString[i - 1])
-                {
-                    AmountOfElements++;
-                }
-                else
-                {
-                    AmountOfElements = 1;
-                }
-                if (maxAmount <= AmountOfElements)
-                {
-                    maxAmount = AmountOfElements;
-                }
-            }
-            if(maxAmount == 1 || myString == null)
-            {
-                maxAmount = 0;
-            }
-            return maxAmount;
-        }
-        public int SearchIdenticalLatinCharacters(string myString)
-        {
-            int maxAmount = 1, AmountOfTheElements = 1;
-            for (int i = 1; i < myString.Length; i++)
-            {
-                if (myString[i] >= 91 && myString[i] <= 96 || myString[i-1] >= 91 && myString[i - 1] <= 96)
-                {
-                    continue;
-                }
-                if (myString[i] == myString[i - 1] && ((myString[i] >=65 && myString[i] >= 122) || (myString[i-1] >= 65 || myString[i-1] >= 122)))
-                {
-                    AmountOfTheElements++;
-                }
-                else
-                {
-                    AmountOfTheElements = 1;
-                }
-                if (maxAmount <= AmountOfTheElements)
-                {
-                    maxAmount = AmountOfTheElements;
-                }
-            }
             if (maxAmount == 1 || myString == null)
             {
                 maxAmount = 0;
             }
             return maxAmount;
+        }
+        /// <summary>
+        /// This method searches for unequal characters.
+        /// </summary>
+        /// <param name="myString"> search string characters </param>
+        /// <returns>maximum amount unequal characters </returns>
+        public int SearchForUnequalCharacters(string myString)
+        {
+            return CountMaxNumberOfCharacters(myString, (x, i) => x[i] != x[i - 1]);
+        }
+        /// <summary>
+        /// This method seaches for identical characters
+        /// </summary>
+        /// <param name="myString"></param>
+        /// <returns>maximum amount identical characters</returns>
+        public int SearchForIdenticalCharacters(string myString)
+        {
+            return CountMaxNumberOfCharacters(myString, (x, i) => x[i] == x[i - 1]);
+        }
+        /// <summary>
+        /// This method searches for identical latin characters
+        /// </summary>
+        /// <param name="myString"></param>
+        /// <returns>maximum amount identical latin characters</returns>
+        public int SearchForIdenticalLatinCharacters(string myString)
+        { 
+            return CountMaxNumberOfCharacters(myString, (x, i) => x[i] == x[i - 1] && 
+            ((x[i] >= 65 && x[i] <= 90) || (x[i] >= 97 && x[i] <= 122)));
         }
     }
 }
