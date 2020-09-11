@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <departments>
+    <faculty>
+      <name> Physics </name>
+      <universityId> 1 </universityId>
+      <FacultyID>1</FacultyID>
+      <AddressId>3</AddressId>
+    </faculty>
+    <faculty>
+      <universityId> 1 </universityId>
+      <name> Mathematics </name>
+      <FacultyID>2</FacultyID>
+      <AddressId>4</AddressId>
+    </faculty>
+    <faculty>
+    <universityId>2</universityId>
+    <name> Biology </name>
+    <FacultyID>3</FacultyID>
+    <AddressId>5</AddressId>
+    </faculty>
+  </departments>
+
+  <students>
+    <student>
+      <name> Ivan </name>
+      <surname> Ivanov </surname>
+      <FacultyID>1</FacultyID>
+      <averageMark>5,5</averageMark>
+    </student>
+    <student>
+      <name> Kostya </name>
+      <surname> Kvanov </surname>
+      <FacultyID>1</FacultyID>
+      <averageMark>6,5</averageMark>
+    </student>
+    <student>
+      <name> Dima </name>
+      <surname> Lvanov </surname>
+      <FacultyID>2</FacultyID>
+      <averageMark>7,5</averageMark>
+    </student>
+    <student>
+      <name> Dima </name>
+      <surname> Svanov </surname>
+      <FacultyID>2</FacultyID>
+      <averageMark>5,5</averageMark>
+    </student>
+    <student>
+      <name> Pavel </name>
+      <surname> Babich </surname>
+      <FacultyID>3</FacultyID>
+      <averageMark>7,5</averageMark>
+    </student>
+  </students>
+
+  <deans>
+    <dean>
+      <deanId>1</deanId>
+      <name>Anton</name>
+      <surname> Smolov </surname>
+    </dean>
+    <dean>
+      <deanId>2</deanId>
+      <name>Vladislav</name>
+      <surname> Ivanov </surname>
+    </dean>
+    <dean>
+      <deanId>3</deanId>
+      <name>Dima</name>
+      <surname> Petrow </surname>
+    </dean>
+    </deans>
+
+  <universities>
+    <university>
+      <universityId> 1 </universityId>
+      <name>BGU</name>
+      <AddressId>3</AddressId>
+    </university>
+    <university>
+      <universityId> 2 </universityId>
+      <name>BNTY</name>
+      <AddressId>1</AddressId>
+    </university>
+  </universities>
+  
+  <addresses>
+  <address>
+    <AddressId> 1 </AddressId>
+    <street> Lenina </street>
+    <city> Minsk </city>
+    <building> 15 </building>
+  </address>
+  <address>
+    <AddressId> 2 </AddressId>
+    <street> Lenina </street>
+    <city> Minsk </city>
+    <building> 32 </building>
+  </address>
+  <address>
+    <AddressId>3</AddressId>
+    <street> October </street>
+    <city> Minsk </city>
+    <building> 14 </building>
+  </address>
+    <address>
+      <AddressId> 4 </AddressId>
+      <street> Kolos </street>
+      <city> Minsk </city>
+      <building> 16 </building>
+    </address>
+    <address>
+      <AddressId> 5 </AddressId>
+      <street> Kolos </street>
+      <city> Minsk </city>
+      <building> 10 </building>
+    </address>
+  </addresses>
+</root>
